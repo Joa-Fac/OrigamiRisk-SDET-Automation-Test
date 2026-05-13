@@ -1,0 +1,23 @@
+{
+  "name": "origamirisk-sdet-automation-test",
+  "version": "1.0.0",
+  "description": "OrigamiRisk SDET Automation Test made by Joaquin Facundo",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test/issues"
+  },
+  "homepage": "https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.7.0"
+  }
+}
