@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "OrigamiRisk SDET Automation Test made by Joaquin Facundo",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test.git"
@@ -16,8 +21,12 @@
     "url": "https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test/issues"
   },
   "homepage": "https://github.com/Joa-Fac/OrigamiRisk-SDET-Automation-Test#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.7.0"
+    "@types/node": "^25.7.0",
+    "typescript": "^5.0.0"
   }
 }
