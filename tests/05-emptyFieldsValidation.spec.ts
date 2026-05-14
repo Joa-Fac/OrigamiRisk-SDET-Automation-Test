@@ -1,6 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { PageObjectManager } from '../pages/PageObjectManager';
 
+/**
+ * Test Case 05 - Login Page Fields Validation
+ *
+ * Performs various field validations within the login page including variations of
+ * empty fields, along with their respective assertions.
+ */
+
 test.describe('Empty field validation', () => {
   let pom: PageObjectManager;
 

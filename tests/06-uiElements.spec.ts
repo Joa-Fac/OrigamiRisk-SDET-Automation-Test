@@ -1,6 +1,13 @@
 import { test, expect } from '@playwright/test';
 import { PageObjectManager } from '../pages/PageObjectManager';
 
+/**
+ * Test Case 06 - UI Elements
+ *
+ * Performs and validates the proper display and functionality of certain
+ * UI elements within the login page.
+ */
+
 test.describe('Login page UI elements', () => {
   let pom: PageObjectManager;
 
@@ -22,7 +29,6 @@ test.describe('Login page UI elements', () => {
     await expect(loginPage.flashMessage).toBeVisible();
 
     await loginPage.flashMessage.locator('a.close').click();
-
     await expect(loginPage.flashMessage).not.toBeVisible();
   });
 });

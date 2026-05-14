@@ -1,6 +1,14 @@
 import { test, expect } from '@playwright/test';
 import { PageObjectManager } from '../pages/PageObjectManager';
 
+/**
+ * Test Case 04 - Logout Flow
+ *
+ * Performs the happy path for login, then execute various tests to verify website
+ * functionality around its logout feature including banner stating it has logged out,
+ * and that it's not possible to access the "/secure" page after a successful logout.
+ */
+
 test.describe('Logout flow', () => {
   let pom: PageObjectManager;
 
