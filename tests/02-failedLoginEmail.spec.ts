@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { PageObjectManager } from '../pages/PageObjectManager';
+import { test, expect } from '../fixtures';
 
 /**
  * Test Case 02 - Login Fails with invalid username
@@ -9,8 +8,7 @@ import { PageObjectManager } from '../pages/PageObjectManager';
  * the error banner, then asserts that the website URL is that of the login page.
  */
 
-test('Login fails with invalid username', async ({ page }) => {
-    const pom = new PageObjectManager(page);
+test('Login fails with invalid username', async ({ page, pom }) => {
     const loginPage = pom.getLoginPage();
 
     await loginPage.navigate();

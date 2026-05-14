@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { PageObjectManager } from '../pages/PageObjectManager';
+import { test, expect } from '../fixtures';
 
 /**
  * Test Case 05 - Login Page Fields Validation
@@ -9,14 +8,11 @@ import { PageObjectManager } from '../pages/PageObjectManager';
  */
 
 test.describe('Empty field validation', () => {
-  let pom: PageObjectManager;
-
-  test.beforeEach(async ({ page }) => {
-    pom = new PageObjectManager(page);
+  test.beforeEach(async ({ pom }) => {
     await pom.getLoginPage().navigate();
   });
 
-  test('Empty username with valid password shows error', async ({ page }) => {
+  test('Empty username with valid password shows error', async ({ page, pom }) => {
     const loginPage = pom.getLoginPage();
     await loginPage.login('', process.env.USER_PASSWORD!);
 
@@ -24,7 +20,7 @@ test.describe('Empty field validation', () => {
     await expect(page).toHaveURL(/\/login/);
   });
 
-  test('Valid username with empty password shows error', async ({ page }) => {
+  test('Valid username with empty password shows error', async ({ page, pom }) => {
     const loginPage = pom.getLoginPage();
     await loginPage.login(process.env.USER_USERNAME!, '');
 
@@ -32,7 +28,7 @@ test.describe('Empty field validation', () => {
     await expect(loginPage.flashMessage).toContainText('Your password is invalid!');
   });
 
-  test('Both fields empty shows error', async ({ page }) => {
+  test('Both fields empty shows error', async ({ page, pom }) => {
     const loginPage = pom.getLoginPage();
     await loginPage.login('', '');
 

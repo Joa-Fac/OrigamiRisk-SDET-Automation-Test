@@ -1,5 +1,4 @@
-import { test, expect } from '@playwright/test';
-import { PageObjectManager } from '../pages/PageObjectManager';
+import { test, expect } from '../fixtures';
 
 /**
  * Test Case 01 - Successful login with valid credentials
@@ -9,8 +8,7 @@ import { PageObjectManager } from '../pages/PageObjectManager';
  * the "logged in" banner, then asserts that the website URL is that of the 'secure' page.
  */
 
-test('Successful login with valid credentials', async ({ page }) => {
-    const pom = new PageObjectManager(page);
+test('Successful login with valid credentials', async ({ page, pom }) => {
     const loginPage = pom.getLoginPage();
 
     await loginPage.navigate();
